@@ -1,0 +1,93 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\User1> mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 70
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| shop               |
+| sys                |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> use example;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_example |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0.03 sec)
+
+mysql> use sample;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> exit
+Bye
+PS C:\Users\User1> mysqldump example > example.sql
+PS C:\Users\User1> dir
+
+
+    Каталог: C:\Users\User1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        25.03.2021     17:21                .cache
+d-----        08.09.2021     11:05                .config
+d-----        06.09.2021     19:51                .eclipse
+d-----        08.09.2021     11:05                .ssh
+d-r---        25.03.2021     19:13                3D Objects
+d-----        12.06.2021     20:17                ARISExpress
+d-r---        25.03.2021     19:13                Contacts
+d-r---        08.09.2021     18:18                Desktop
+d-----        26.03.2021     20:05                Doctor Web
+d-r---        27.04.2021     21:38                Documents
+d-r---        08.09.2021     10:50                Downloads
+d-r---        25.03.2021     19:13                Favorites
+d-r---        25.03.2021     19:13                Links
+d-----        01.04.2021     19:12                MediaGet2
+d-----        03.08.2021     18:50                Microsoft
+d-r---        25.03.2021     19:13                Music
+dar--l        08.09.2021     11:15                OneDrive
+d-r---        25.03.2021     19:14                Pictures
+d-r---        25.03.2021     19:13                Saved Games
+d-r---        25.03.2021     19:14                Searches
+d-r---        26.03.2021     20:16                Videos
+-a----        08.09.2021     11:05             52 .gitconfig
+-a----        08.09.2021     18:24           3734 example.sql
+-a----        08.09.2021     11:34             35 my.cnf
+
+
+PS C:\Users\User1> mysql sample < example.sql
+строка:1 знак:14
++ mysql sample < example.sql
++              ~
+Оператор "<" зарезервирован для использования в будущем.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\User1>
